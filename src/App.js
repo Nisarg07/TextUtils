@@ -3,8 +3,8 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import Alert from "./components/Alert";
-// import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-// import About from "./components/About";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import About from "./components/About";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -81,22 +81,45 @@ function App() {
 
   return (
     <>
-      <Navbar
-        title="TextUtils"
-        mode={mode}
-        aboutText="About TextUtils"
-        toggleMode={toggleMode}
-        toggleDarkTheme={toggleDarkTheme}
-      />
-      <Alert alert={alert} />
-      <div className="container my-3">
-        <TextForm
-          heading="Enter text to Analyze Below"
+      <Router>
+        <Navbar
+          title="TextUtils"
           mode={mode}
-          showAlert={showAlert}
-          darkTheme={darkTheme}
+          aboutText="About TextUtils"
+          toggleMode={toggleMode}
+          toggleDarkTheme={toggleDarkTheme}
         />
-      </div>
+        <Alert alert={alert} />
+        <div className="container my-3">
+          <Routes>
+            <Route
+              exact
+              path="/"
+              element={
+                <TextForm
+                  heading="Enter text to Analyze Below"
+                  mode={mode}
+                  showAlert={showAlert}
+                  darkTheme={darkTheme}
+                />
+              }
+            />
+            <Route
+              exact
+              path="/TextUtils"
+              element={
+                <TextForm
+                  heading="Enter text to Analyze Below"
+                  mode={mode}
+                  showAlert={showAlert}
+                  darkTheme={darkTheme}
+                />
+              }
+            />
+            <Route exact path="/about" element={<About mode={mode} />} />
+          </Routes>
+        </div>
+      </Router>
     </>
   );
 }
