@@ -129,7 +129,10 @@ export default function TextForm(props) {
         style={{ color: props.mode === "dark" ? "white" : "#042743" }}
       >
         <h1>Your text summary</h1>
-        <p>Language of the entered text is {language.toUpperCase()}.</p>
+        <p>
+          Language of the entered text is{" "}
+          <strong>{language.toUpperCase()}</strong>.
+        </p>
         <p>
           Your text has{" "}
           {
