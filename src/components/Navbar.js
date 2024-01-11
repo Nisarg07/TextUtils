@@ -56,6 +56,7 @@ export default function Navbar(props) {
               onClick={props.toggleMode}
               role="switch"
               id="flexSwitchCheckDefault"
+              style={{ cursor: "pointer" }}
             />
             {/* <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Dark Mode</label> */}
             <div className="dropdown-center">
@@ -88,6 +89,7 @@ export default function Navbar(props) {
                         <label
                           className="dropdown-item"
                           onClick={() => changeDarkTheme("default")}
+                          style={{ cursor: "pointer" }}
                         >
                           Default
                         </label>
@@ -96,6 +98,7 @@ export default function Navbar(props) {
                         <label
                           className="dropdown-item"
                           onClick={() => changeDarkTheme("Blue")}
+                          style={{ cursor: "pointer" }}
                         >
                           Blue
                         </label>
@@ -104,6 +107,7 @@ export default function Navbar(props) {
                         <label
                           className="dropdown-item"
                           onClick={() => changeDarkTheme("Green")}
+                          style={{ cursor: "pointer" }}
                         >
                           Green
                         </label>

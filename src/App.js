@@ -65,7 +65,8 @@ function App() {
     } else if (darkTheme === "Green") {
       document.body.style.backgroundColor = "#0f5032";
     }
-    document.title = "TextUtils DarkMode";
+    // document.title =
+    //   "TextUtils - Word counter | character counter | lowercase to uppercase | uppercase to lowercase | language detector DarkMode";
   } else {
     if (darkTheme === "default") {
       document.body.style.backgroundColor = "#bfc0f7";
@@ -74,7 +75,8 @@ function App() {
     } else if (darkTheme === "Green") {
       document.body.style.backgroundColor = "#bcfbc7";
     }
-    document.title = "TextUtils";
+    // document.title =
+    //   "TextUtils - Word counter | character counter | lowercase to uppercase | uppercase to lowercase | language detector";
     // setInterval(()=>document.title = 'its interval time',1500);
     // setInterval(()=>document.title = 'interval over',1000);
   }
@@ -97,7 +99,7 @@ function App() {
               path="/"
               element={
                 <TextForm
-                  heading="Enter text to Analyze Below"
+                  heading="Try TextUtils - word counter, character counter, remove extra spaces"
                   mode={mode}
                   showAlert={showAlert}
                   darkTheme={darkTheme}
@@ -109,14 +111,18 @@ function App() {
               path="/TextUtils"
               element={
                 <TextForm
-                  heading="Enter text to Analyze Below"
+                  heading="Try TextUtils - word counter, character counter, remove extra spaces"
                   mode={mode}
                   showAlert={showAlert}
                   darkTheme={darkTheme}
                 />
               }
             />
-            <Route exact path="/about" element={<About mode={mode} />} />
+            <Route
+              exact
+              path="/about"
+              element={<About mode={mode} bgColor={bgColor} />}
+            />
           </Routes>
         </div>
       </Router>

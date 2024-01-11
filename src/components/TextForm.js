@@ -37,6 +37,7 @@ export default function TextForm(props) {
     const el = document.getElementById("mybox");
     el.select();
     navigator.clipboard.writeText(el.value);
+    document.getSelection().removeAllRanges();
     props.showAlert("Text has been copied to clipboard.", "success");
   };
   const extractSpaces = () => {
@@ -48,7 +49,7 @@ export default function TextForm(props) {
     <>
       <div className="container">
         <div
-          className={`mb-3`}
+          className={`mb-4`}
           style={{ color: props.mode === "dark" ? "white" : "#042743" }}
         >
           <h2>{props.heading}</h2>
@@ -144,7 +145,13 @@ export default function TextForm(props) {
           words and {text.trim().length} characters.
         </p>
         <p>
-          Text can be read in {0.008 * text.trim().split(/\s+/).length} minutes.
+          Text can be read in{" "}
+          {0.008 *
+            text
+              .trim()
+              .split(/\s+/)
+              .filter((text) => text.length > 0).length}{" "}
+          minutes.
         </p>
         <h2>Preview</h2>
         <p>
