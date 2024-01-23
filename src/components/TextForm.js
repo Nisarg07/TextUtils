@@ -34,10 +34,10 @@ export default function TextForm(props) {
     props.showAlert("Text language has been detected.", "success");
   };
   const copyText = () => {
-    const el = document.getElementById("mybox");
-    el.select();
-    navigator.clipboard.writeText(el.value);
-    document.getSelection().removeAllRanges();
+    // const el = document.getElementById("mybox");
+    // el.select();
+    navigator.clipboard.writeText(text);
+    // document.getSelection().removeAllRanges();
     props.showAlert("Text has been copied to clipboard.", "success");
   };
   const extractSpaces = () => {
